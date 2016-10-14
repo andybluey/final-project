@@ -1,0 +1,264 @@
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Console", Monaco, monospace;
+  padding-bottom: 50px;
+  margin: 0;
+}
+
+button {
+  padding: 10px 30px;
+  background: lightslategray;
+  color: white;
+  outline:none;
+  position: relative;
+  top: 0px;
+  font-size: 0.5em;
+}
+
+h2 {
+  padding-top: 10px;
+  /*padding-bottom: 10px;*/
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+input {
+  padding: 10px 30px;
+
+
+  outline:none;
+  position: relative;
+  top: 0px;
+}
+
+table {
+  border-collapse: collapse;
+  overflow: scroll;
+  width: 40%;
+  height: 40%;
+}
+
+td {
+  font-weight: bold;
+  text-overflow: clip;
+}
+
+table, th, td {
+  border: 2px solid black;
+  max-width: 40%;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+
+
+.footer-one {
+  position: absolute;
+  height: 50px;
+  right: 50px;
+  bottom: 30px;
+  font-size: 1em;
+  text-align: right;
+}
+
+.footer-two {
+  position: absolute;
+  height: 50px;
+  left: 50px;
+  bottom: 30px;
+  font-size: 1em;
+  text-align: left;
+}
+
+.home p {
+  text-align: center;
+  color: ghostwhite;
+}
+
+.home {
+  background-color: #09bcbf;
+  margin: 0;
+  text-align: center;
+  height: 600px;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 1.5em;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: relative;
+}
+
+.activity {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 70px;
+  font-size: 1.5em;
+}
+
+.commit-activity {
+  display: inline-block;
+}
+
+.button-primary {
+  padding: 10px 30px;
+  background: lightslategray;
+  color: white;
+  font-size: 0.8em;
+  outline:none;
+  position: relative;
+  left: 0%;
+  top: 0%;
+}
+
+.back-button {
+  padding: 10px 30px;
+  background: lightslategray;
+  color: white;
+  font-size: 1em;
+  outline:none;
+  position: absolute;
+  right: 10%;
+  top: 13%;
+}
+
+.banner {
+  background: #09bcbf;
+  height: 80px;
+  line-height: 80px;
+  padding-left: 30px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  background-color: #09bcbf;
+  margin: 0;
+  text-align: center;
+  height: 180px;
+  top: 0;
+  left: 0;
+}
+
+.home-button {
+  padding: 10px 30px;
+  background: lightslategray;
+  color: white;
+  font-size: 1em;
+  outline:none;
+  position: absolute;
+  right: 2%;
+  top: 13%;
+}
+
+.instructions {
+  top: 200px;
+  right: 200px;
+  text-align: center;
+}
+
+.submit {
+  padding: 10px 30px;
+  background: lightslategray;
+  color: gainsboro;
+  outline:none;
+  position: relative;
+  top: 0px;
+}
+
+.search {
+  top: 500px;
+}
+
+.app {
+  bottom: 30px;
+}
+
+.github-name {
+  font-size: 2em;
+  outline:none;
+  position: absolute;
+  top: 12%;
+  left: 35%;
+}
+
+.charts {
+  text-align: center;
+}
+
+ul.tab {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*border: 1px solid black;
+  background-color: #f1f1f1;*/
+}
+
+ul.tab li {float: left;}
+
+
+ul.tab li a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.content {
+    display: inline-block;
+    padding: 20px;
+    max-width: 80%;
+}
+
+.appear-enter {
+  transition-duration: .7s;
+  transition-property: opacity;
+  transition-timing-function: ease-out;
+  opacity: 0;
+}
+
+.appear-enter.appear-enter-active {
+  opacity: 1;
+}
+
+.appear-leave {
+  opacity: 0;
+}
+
+.commit-activity, .popular-users {
+  width: 50%;
+  float: left;
+  padding: 0 20px;
+}
+
+.commit-activity ul, .popular-users ul {
+  padding: 0;
+}
+
+.commit-activity li, .popular-users li {
+  list-style-type: none;
+  margin-bottom: 5px;
+}
