@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Lucida Console", Monaco, monospace;
+  font-family: 'Amatic SC', cursive;
   padding-bottom: 50px;
   margin: 0;
 }
@@ -92,7 +92,7 @@ table, th, td {
   margin: 0;
   text-align: center;
   height: 600px;
-  font-family: "Lucida Console", Monaco, monospace;
+  font-family: 'Amatic SC', cursive;
   font-size: 1.5em;
   top: 0;
   left: 0;
