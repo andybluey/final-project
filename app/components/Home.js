@@ -110,7 +110,7 @@ class Home extends Component {
     return (
       <div>
         <div className="home">
-          <img className="logo" src="http://stack4things.unime.it/wp-content/uploads/2015/11/1381298481_github_circle_color.png" alt="github" />
+          <img className="logo" src="../app/images/github-mark-logo.png" alt="github" />
           <h2>Animating Github</h2>
           <p>A visual representation of Githubs Users</p>
           <p>Made possible with the Github API and d3js</p>
