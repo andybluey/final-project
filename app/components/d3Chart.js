@@ -66,7 +66,7 @@ d3Chart.createChart = function (el, props, state) {
         .attr("text-anchor", "middle")
         .text(function(d){ return d["name"]; })
         .style({
-            "fill":"lightslategray",
+            "fill":"black",
             "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
             "font-size": "12px"
         });
@@ -128,8 +128,8 @@ d3Chart.createChart = function (el, props, state) {
 d3Chart.createSecondChart = function (el, props, state) {
   if (!state) { return false; }
 
-  var svg = d3.select(".ChartTwo").append("svg").attr({ width: 440, height: 400 }),
-      margin = {top: 20, right: 20, bottom: 30, left: 40},
+  var svg = d3.select(".ChartTwo").append("svg").attr({ width: 700, height: 600 }),
+      margin = {top: 30, right: 30, bottom: 30, left: 30},
       width = +svg.attr("width") - margin.left - margin.right,
       height = +svg.attr("height") - margin.top - margin.bottom;
 

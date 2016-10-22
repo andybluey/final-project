@@ -19,7 +19,7 @@ class CommitActivity extends Component {
   updateEvents() {
     this.state.currentEvent += 1;
 
-    console.log( this.state.currentEvent );
+    // console.log( this.state.currentEvent );
 
     if ( this.state.currentEvent > this.props.commits.length ) {
       return false;
@@ -99,7 +99,7 @@ class CommitActivity extends Component {
         default:
           message = r.type;
       }
-      console.log( r.repo );
+      // console.log( r.repo );
       const url = "https://github.com/" + r.repo.name;
       return (
         <li>

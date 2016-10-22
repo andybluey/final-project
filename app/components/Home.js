@@ -122,7 +122,7 @@ class Home extends Component {
           </p>
         </div>
           <div className="footer-one">Inspired by <a href="https://github.audio/">Github Audio</a>
-            <br/>Inspire by <a href="http://www.lucify.com/the-flow-towards-europe/">Lucify</a>
+            <br/>Inspired by <a href="http://www.lucify.com/the-flow-towards-europe/">Lucify</a>
           </div>
           <div className="footer-two">Developed by <a href="github.com/andybluey">Andybluey</a>
           </div>

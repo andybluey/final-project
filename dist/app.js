@@ -28226,7 +28226,7 @@
 	            'Github Audio'
 	          ),
 	          _react2.default.createElement('br', null),
-	          'Inspire by ',
+	          'Inspired by ',
 	          _react2.default.createElement(
 	            'a',
 	            { href: 'http://www.lucify.com/the-flow-towards-europe/' },
@@ -30108,7 +30108,7 @@
 	    value: function updateEvents() {
 	      this.state.currentEvent += 1;
 
-	      console.log(this.state.currentEvent);
+	      // console.log( this.state.currentEvent );
 
 	      if (this.state.currentEvent > this.props.commits.length) {
 	        return false;
@@ -30194,7 +30194,7 @@
 	          default:
 	            message = r.type;
 	        }
-	        console.log(r.repo);
+	        // console.log( r.repo );
 	        var url = "https://github.com/" + r.repo.name;
 	        return _react2.default.createElement(
 	          'li',
@@ -47701,7 +47701,7 @@
 	        }).attr("text-anchor", "middle").text(function (d) {
 	            return d["name"];
 	        }).style({
-	            "fill": "lightslategray",
+	            "fill": "black",
 	            "font-family": "Helvetica Neue, Helvetica, Arial, san-serif",
 	            "font-size": "12px"
 	        });
@@ -47767,8 +47767,8 @@
 	        return false;
 	    }
 
-	    var svg = d3.select(".ChartTwo").append("svg").attr({ width: 440, height: 400 }),
-	        margin = { top: 20, right: 20, bottom: 30, left: 40 },
+	    var svg = d3.select(".ChartTwo").append("svg").attr({ width: 700, height: 600 }),
+	        margin = { top: 30, right: 30, bottom: 30, left: 30 },
 	        width = +svg.attr("width") - margin.left - margin.right,
 	        height = +svg.attr("height") - margin.top - margin.bottom;
 
@@ -48072,7 +48072,7 @@
 
 	    _this.state = {
 	      user: {},
-	      chartShown: "Languages Used"
+	      chartShown: "Repos"
 	    };
 	    return _this;
 	  }

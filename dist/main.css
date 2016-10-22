@@ -91,7 +91,7 @@ table, th, td {
   background-color: #09bcbf;
   margin: 0;
   text-align: center;
-  height: 600px;
+  height: 100%;
   font-family: "Lucida Console", Monaco, monospace;
   font-size: 1.5em;
   top: 0;
@@ -256,7 +256,7 @@ ul.tab li a {
 }
 
 .commit-activity ul, .popular-users ul {
-  padding: 0;
+  padding-left: 12%;
 }
 
 .commit-activity li, .popular-users li {

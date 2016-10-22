@@ -28,7 +28,7 @@ class ChartContainer extends Component {
     super();
     this.state={
       user: {},
-      chartShown: "Languages Used"
+      chartShown: "Repos"
     };
   }
   updateChart(name) {
