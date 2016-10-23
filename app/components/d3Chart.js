@@ -11,7 +11,7 @@ d3Chart.createChart = function (el, props, state) {
 
   var diameter = 600; //max size of the bubbles
   var width = 700;
-  var height = 600;
+  var height = 500;
   var color = d3.scale.category10(); //color category
 
   var data = state.data;
@@ -85,6 +85,7 @@ d3Chart.createChart = function (el, props, state) {
     });
 
     function changeForce(charge, gravity) {
+      console.log("force.charge");
      force.charge(charge).gravity(gravity);
     }
     changeForce(30, 0.03);
@@ -97,7 +98,6 @@ d3Chart.createChart = function (el, props, state) {
     // });
 
     function collide(node) {
-      // console.log("Collide Function");
       var r = node.radius + 16,
           nx1 = node.x - r,
           nx2 = node.x + r,
@@ -128,13 +128,13 @@ d3Chart.createChart = function (el, props, state) {
 d3Chart.createSecondChart = function (el, props, state) {
   if (!state) { return false; }
 
-  var svg = d3.select(".ChartTwo").append("svg").attr({ width: 700, height: 600 }),
+  var svg = d3.select(".ChartTwo").append("svg").attr({ width: 700, height: 500 }),
       margin = {top: 30, right: 30, bottom: 30, left: 30},
       width = +svg.attr("width") - margin.left - margin.right,
       height = +svg.attr("height") - margin.top - margin.bottom;
 
   var x = d3.scale.ordinal().rangeRoundBands([0, width], .05),
-      y = d3.scale.ordinal().rangeRoundBands([height, 0]);
+      y = d3.scale.linear().range([height, 0]);
 
   var g = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -161,18 +161,19 @@ d3Chart.createSecondChart = function (el, props, state) {
         .call(d3.svg.axis()
           .scale(y)
           .orient("left")
-          .ticks([10, "%"]))
+          .ticks(10))
       .append("text")
         .attr("transform", "rotate(-90)")
-        .attr("y", 6)
+        .attr("y", 10)
         .attr("dy", "0.71em")
-        .attr("text-anchor", "end");
+        .attr("text-anchor", "middle");
 
     let data = [];
     for ( var key in state ) {
       let obj = { key: key, value: state[key] };
       data.push( obj )
     }
+
     console.log("Height", height);
     g.selectAll("rect.bar")
       .data( data )
@@ -193,12 +194,12 @@ d3Chart.createSecondChart = function (el, props, state) {
         })
         .attr("height", 0)
 			    .transition()
-    			.duration(600)
+    			.duration(1200)
     			.delay(function (d, i) {
-    				return i * 50;
+    				return i * 10;
     		})
-        .attr("height", function(d) { return (d.value * 50); })
-        .attr("y", function(d) { return ( height - (d.value * 50) ); });
+        .attr("height", function(d) { return (d.value * 20); })
+        .attr("y", function(d) { return ( height - (d.value * 20) ); });
   };
 
   /////////////               ////////////////////////

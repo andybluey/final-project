@@ -28064,109 +28064,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	// class CreateChart extends Component {
-	//   render() {
-	//     return (
-	//       var w = 960,
-	//         h = 50;
-	//
-	//         var n = 240,
-	//             x = d3.scale.linear().domain([0, n]).range([h, w - h]),
-	//             a = d3.scale.linear().domain([0, n - 1]).range([90 + 60, 270 - 60]),
-	//             data = d3.shuffle(d3.range(n)),
-	//             duration = 250;
-	//
-	//         var svg = d3.select("body").append("svg")
-	//             .attr("width", w)
-	//             .attr("height", h);
-	//
-	//         var line = svg.selectAll("line")
-	//             .data(data)
-	//           .enter().append("line")
-	//             .attr("x1", 0)
-	//             .attr("y1", 0)
-	//             .attr("x2", 0)
-	//             .attr("y2", h)
-	//             .attr("transform", transform);
-	//
-	//         start();
-	//
-	//         // Start the animation!
-	//         function start() {
-	//           var passes = mergesort(data).reverse();
-	//
-	//           update();
-	//
-	//           function update() {
-	//             var pass = passes.pop();
-	//
-	//             line.data(pass, Number)
-	//               .transition()
-	//                 .duration(duration)
-	//                 .attr("transform", transform);
-	//
-	//             if (passes.length) {
-	//               setTimeout(update, duration);
-	//             } else {
-	//               d3.shuffle(data);
-	//               setTimeout(start, duration + 4000);
-	//             }
-	//           }
-	//         }
-	//
-	//         function transform(d, i) {
-	//           return "translate(" + x(i) + "," + h + ")rotate(" + a(d) + ")";
-	//         }
-	//
-	//         // Sorts the specified array using bottom-up mergesort, returning an array of
-	//         // arrays representing the state of the specified array after each insertion for
-	//         // each parallel pass. The first pass is performed at size = 2.
-	//         function mergesort(array) {
-	//           var passes = [],
-	//               i,
-	//               j,
-	//               n = array.length,
-	//               m = 1;
-	//
-	//           // double the size each pass
-	//           while (m < array.length) {
-	//             i = j = 0; while (i < array.length) j += merge(i, i += m, i += m);
-	//             if (j) passes.push(array.slice());
-	//             else m <<= 1;
-	//           }
-	//
-	//           // Merges two adjacent sorted arrays in-place.
-	//           function merge(start, middle, end) {
-	//             middle = Math.min(array.length, middle);
-	//             end = Math.min(array.length, end);
-	//             for (; start < middle; start++) {
-	//               if (array[start] > array[middle]) {
-	//                 var v = array[start];
-	//                 array[start] = array[middle];
-	//                 insert(middle, end, v);
-	//                 return true;
-	//               }
-	//             }
-	//             return false;
-	//           }
-	//
-	//           // Inserts the value v into the subarray specified by start and end.
-	//           function insert(start, end, v) {
-	//             while (start + 1 < end && array[start + 1] < v) {
-	//               var tmp = array[start];
-	//               array[start] = array[start + 1];
-	//               array[start + 1] = tmp;
-	//               start++;
-	//             }
-	//             array[start] = v;
-	//           }
-	//
-	//           return passes;
-	//         }
-	//     );
-	//   }
-	// }
-
 	var Home = function (_Component) {
 	  _inherits(Home, _Component);
 
@@ -28239,7 +28136,7 @@
 	          'Developed by ',
 	          _react2.default.createElement(
 	            'a',
-	            { href: 'github.com/andybluey' },
+	            { href: 'https://github.com/andybluey' },
 	            'Andybluey'
 	          )
 	        )
@@ -47652,7 +47549,7 @@
 
 	    var diameter = 600; //max size of the bubbles
 	    var width = 700;
-	    var height = 600;
+	    var height = 500;
 	    var color = d3.scale.category10(); //color category
 
 	    var data = state.data;
@@ -47722,6 +47619,7 @@
 	    });
 
 	    function changeForce(charge, gravity) {
+	        console.log("force.charge");
 	        force.charge(charge).gravity(gravity);
 	    }
 	    changeForce(30, 0.03);
@@ -47734,7 +47632,6 @@
 	    // });
 
 	    function collide(node) {
-	        // console.log("Collide Function");
 	        var r = node.radius + 16,
 	            nx1 = node.x - r,
 	            nx2 = node.x + r,
@@ -47767,13 +47664,13 @@
 	        return false;
 	    }
 
-	    var svg = d3.select(".ChartTwo").append("svg").attr({ width: 700, height: 600 }),
+	    var svg = d3.select(".ChartTwo").append("svg").attr({ width: 700, height: 500 }),
 	        margin = { top: 30, right: 30, bottom: 30, left: 30 },
 	        width = +svg.attr("width") - margin.left - margin.right,
 	        height = +svg.attr("height") - margin.top - margin.bottom;
 
 	    var x = d3.scale.ordinal().rangeRoundBands([0, width], .05),
-	        y = d3.scale.ordinal().rangeRoundBands([height, 0]);
+	        y = d3.scale.linear().range([height, 0]);
 
 	    var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -47789,13 +47686,14 @@
 
 	    g.append("g").attr("class", "axis axis--x").attr("transform", "translate(0," + height + ")").call(d3.svg.axis().scale(x).orient("bottom"));
 
-	    g.append("g").attr("class", "axis axis--y").call(d3.svg.axis().scale(y).orient("left").ticks([10, "%"])).append("text").attr("transform", "rotate(-90)").attr("y", 6).attr("dy", "0.71em").attr("text-anchor", "end");
+	    g.append("g").attr("class", "axis axis--y").call(d3.svg.axis().scale(y).orient("left").ticks(10)).append("text").attr("transform", "rotate(-90)").attr("y", 10).attr("dy", "0.71em").attr("text-anchor", "middle");
 
 	    var data = [];
 	    for (var key in state) {
 	        var obj = { key: key, value: state[key] };
 	        data.push(obj);
 	    }
+
 	    console.log("Height", height);
 	    g.selectAll("rect.bar").data(data).enter().append("rect").attr("class", "bar").attr("x", function (d, i) {
 	        return x(d.key);
@@ -47803,12 +47701,12 @@
 	        return "rgb(9, 188, " + d.value * 36 + ")";
 	    }).attr("y", function (d, i) {
 	        return height;
-	    }).attr("height", 0).transition().duration(600).delay(function (d, i) {
-	        return i * 50;
+	    }).attr("height", 0).transition().duration(1200).delay(function (d, i) {
+	        return i * 10;
 	    }).attr("height", function (d) {
-	        return d.value * 50;
+	        return d.value * 20;
 	    }).attr("y", function (d) {
-	        return height - d.value * 50;
+	        return height - d.value * 20;
 	    });
 	};
 
@@ -48046,17 +47944,17 @@
 	    { className: 'tab' },
 	    _react2.default.createElement(
 	      'button',
-	      null,
+	      { className: 'button-primary' },
 	      _react2.default.createElement(Tab, { className: 'tablinks', onClick: props.updateChart, name: 'Repos' })
 	    ),
 	    _react2.default.createElement(
 	      'button',
-	      null,
+	      { className: 'button-primary' },
 	      _react2.default.createElement(Tab, { className: 'tablinks', onClick: props.updateChart, name: 'Languages' })
 	    ),
 	    _react2.default.createElement(
 	      'button',
-	      null,
+	      { className: 'button-primary' },
 	      _react2.default.createElement(Tab, { className: 'tablinks', onClick: props.updateChart, name: 'Activity' })
 	    )
 	  );

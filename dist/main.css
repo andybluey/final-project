@@ -10,7 +10,7 @@ body {
   margin: 0;
 }
 
-button {
+/*button {
   padding: 10px 30px;
   background: lightslategray;
   color: white;
@@ -18,6 +18,23 @@ button {
   position: relative;
   top: 0px;
   font-size: 0.5em;
+}*/
+
+button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #a6acb0;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #09bcbf;
+  text-decoration: none;
 }
 
 h2 {
@@ -33,8 +50,6 @@ h2 {
 
 input {
   padding: 10px 30px;
-
-
   outline:none;
   position: relative;
   top: 0px;
@@ -62,7 +77,6 @@ table, th, td {
   white-space: nowrap;
 
 }
-
 
 .footer-one {
   position: absolute;
@@ -119,20 +133,38 @@ table, th, td {
 }
 
 .button-primary {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
   padding: 10px 30px;
-  background: lightslategray;
-  color: white;
   font-size: 0.8em;
   outline:none;
   position: relative;
   left: 0%;
   top: 0%;
+  background: #a6acb0;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.button-primary:hover {
+  background: #09bcbf;
+  text-decoration: none;
+}
+
+.home-button {
+  padding: 10px 30px;
+  font-size: 1em;
+  outline:none;
+  position: absolute;
+  right: 2%;
+  top: 13%;
 }
 
 .back-button {
   padding: 10px 30px;
-  background: lightslategray;
-  color: white;
   font-size: 1em;
   outline:none;
   position: absolute;
@@ -160,17 +192,6 @@ table, th, td {
   left: 0;
 }
 
-.home-button {
-  padding: 10px 30px;
-  background: lightslategray;
-  color: white;
-  font-size: 1em;
-  outline:none;
-  position: absolute;
-  right: 2%;
-  top: 13%;
-}
-
 .instructions {
   top: 200px;
   right: 200px;
@@ -181,7 +202,7 @@ table, th, td {
   padding: 10px 30px;
   background: lightslategray;
   color: gainsboro;
-  outline:none;
+  outline: none;
   position: relative;
   top: 0px;
 }
