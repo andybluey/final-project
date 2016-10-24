@@ -11,7 +11,7 @@ d3Chart.createChart = function (el, props, state) {
 
   var diameter = 600; //max size of the bubbles
   var width = 700;
-  var height = 600;
+  var height = 500;
   var color = d3.scale.category10(); //color category
 
   var data = state.data;
@@ -85,6 +85,7 @@ d3Chart.createChart = function (el, props, state) {
     });
 
     function changeForce(charge, gravity) {
+      console.log("force.charge");
      force.charge(charge).gravity(gravity);
     }
     changeForce(30, 0.03);
@@ -97,7 +98,6 @@ d3Chart.createChart = function (el, props, state) {
     // });
 
     function collide(node) {
-      // console.log("Collide Function");
       var r = node.radius + 16,
           nx1 = node.x - r,
           nx2 = node.x + r,

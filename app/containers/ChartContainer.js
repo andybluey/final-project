@@ -16,9 +16,9 @@ const Tab = (props) => {
 const TabNavigation = ( props ) => {
   return (
     <ul className="tab">
-      <button><Tab className="tablinks" onClick={props.updateChart} name="Repos" /></button>
-      <button><Tab className="tablinks" onClick={props.updateChart} name="Languages" /></button>
-      <button><Tab className="tablinks" onClick={props.updateChart} name="Activity" /></button>
+      <button className="button-primary"><Tab className="tablinks" onClick={props.updateChart} name="Repos" /></button>
+      <button className="button-primary"><Tab className="tablinks" onClick={props.updateChart} name="Languages" /></button>
+      <button className="button-primary"><Tab className="tablinks" onClick={props.updateChart} name="Activity" /></button>
     </ul>
   );
 }
